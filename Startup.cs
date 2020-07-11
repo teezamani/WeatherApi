@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +31,21 @@ namespace WeatherApp
             //Register connection string to service Provider
             services.AddDbContext<AppDBContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //Enable Identity for Authentication
+            services.AddIdentityCore<User>(options =>
+            {
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
+            })
+            // .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<AppDBContext>()
+            .AddDefaultTokenProviders();
 
             services.AddControllers();
         }
