@@ -1,0 +1,10 @@
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\appsettings.Development.json
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\WeatherApp.exe
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.csprojAssemblyReference.cache
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\staticwebassets\WeatherApp.StaticWebAssets.Manifest.cache
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\staticwebassets\WeatherApp.StaticWebAssets.xml
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.AssemblyInfoInputs.cache
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.AssemblyInfo.cs
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.RazorTargetAssemblyInfo.cache
