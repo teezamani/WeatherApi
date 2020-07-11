@@ -17,3 +17,6 @@ C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreap
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.csproj.CopyComplete
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
