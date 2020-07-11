@@ -109,6 +109,16 @@ namespace WeatherApp
                     }
                 });
             });
+
+            //Enable Cors Origin
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins(Configuration["ApplicationSettings:Client_Url"].ToString())
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -129,6 +139,8 @@ namespace WeatherApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
