@@ -36,15 +36,14 @@ namespace WeatherApp
             //Enable Identity for Authentication
             services.AddIdentity<User, IdentityRole>(options =>
             {
-                options.Password.RequiredLength = 4;
+                options.Password.RequiredLength = 3;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireDigit = false;
                 options.User.RequireUniqueEmail = true;
-                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedEmail = false;
             })
-            // .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDBContext>()
             .AddDefaultTokenProviders();
 
