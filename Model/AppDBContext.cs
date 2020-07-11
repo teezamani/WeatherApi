@@ -14,7 +14,7 @@ namespace WeatherApp.Model
         //Contructor Injector
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
-            Database.Migrate();
+           // Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
