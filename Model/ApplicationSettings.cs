@@ -9,5 +9,6 @@ namespace WeatherApp.Model
     {
         public string JWT_Secret { get; set; }
         public string Client_Url { get; set; }
+        public string OpenWeatherApiKey { get; set; }
     }
 }

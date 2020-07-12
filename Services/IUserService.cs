@@ -27,19 +27,18 @@ namespace WeatherApp.Services
     {
         //Injecting all required Services
         private UserManager<User> _userManager;
-        private readonly IConfiguration _configuration;
         private readonly ApplicationSettings _appSettings;
 
-        public UserService(UserManager<User> userManager, IOptions<ApplicationSettings> appSettings, IConfiguration configuration)
+        public UserService(UserManager<User> userManager, IOptions<ApplicationSettings> appSettings)
         {
             _userManager = userManager;
-            _configuration = configuration;
             _appSettings = appSettings.Value;
         }
 
         //The register controller calls thos method beforeexecutin the register endpoint
         public async Task<UserManagerResponse> RegisterUserAsync(UserRegister model)
         {
+            
             try
             {
                 // Check if body of request is not empty 
@@ -89,13 +88,14 @@ namespace WeatherApp.Services
                     Errors = results.Errors.Select(e => e.Description)
                 };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new UserManagerResponse
                 {
-                    Message = "system error",
-                    IsSuccess = false, 
-               };
+                    Message = "Error while registering user",
+                    IsSuccess = false,
+                    Exception = ex.Message
+                };
             }
         }
 
