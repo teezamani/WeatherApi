@@ -146,6 +146,8 @@ namespace WeatherApp
 
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
