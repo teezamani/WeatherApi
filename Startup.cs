@@ -18,6 +18,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WeatherApp.Services;
 
 namespace WeatherApp
 {
@@ -36,6 +37,9 @@ namespace WeatherApp
             //Register connection string to service Provider
             services.AddDbContext<AppDBContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //Register UserService
+            services.AddScoped<IUserService, UserService>();
 
             //Enable Identity for Authentication
             services.AddIdentity<User, IdentityRole>(options =>

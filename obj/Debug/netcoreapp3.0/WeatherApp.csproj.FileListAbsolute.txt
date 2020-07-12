@@ -68,3 +68,6 @@ C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreap
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.dll
 C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.pdb
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sh. Ahmad Tijani\source\repos\WeatherApp\WeatherApp\obj\Debug\netcoreapp3.0\WeatherApp.MvcApplicationPartsAssemblyInfo.cache
