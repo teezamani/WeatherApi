@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -26,11 +27,13 @@ namespace WeatherApp.Services
     {
         //Injecting all required Services
         private UserManager<User> _userManager;
+        private readonly IConfiguration _configuration;
         private readonly ApplicationSettings _appSettings;
 
-        public UserService(UserManager<User> userManager, IOptions<ApplicationSettings> appSettings)
+        public UserService(UserManager<User> userManager, IOptions<ApplicationSettings> appSettings, IConfiguration configuration)
         {
             _userManager = userManager;
+            _configuration = configuration;
             _appSettings = appSettings.Value;
         }
 
@@ -68,6 +71,7 @@ namespace WeatherApp.Services
                 //Hash the password in the database
                 var results = await _userManager.CreateAsync(user, model.Password);
 
+
                 if (results.Succeeded)
                 {
                     return new UserManagerResponse
@@ -76,21 +80,22 @@ namespace WeatherApp.Services
                         IsSuccess = true,
                     };
                 }
+
                 return new UserManagerResponse
                 {
 
                     Message = "User did not create",
                     IsSuccess = false,
+                    Errors = results.Errors.Select(e => e.Description)
                 };
             }
             catch (Exception)
             {
-
                 return new UserManagerResponse
                 {
-                    Message = "User did not create",
-                    IsSuccess = false,
-                };
+                    Message = "system error",
+                    IsSuccess = false, 
+               };
             }
         }
 
@@ -128,7 +133,7 @@ namespace WeatherApp.Services
 
                         new Claim("UserID" , user.Id),
                         new Claim("Email", user.Email),
-                             // new Claim("Role", user.RoleName)
+ 
                          }),
                     Expires = DateTime.UtcNow.AddHours(4),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
@@ -147,12 +152,13 @@ namespace WeatherApp.Services
                 };
             }
             //If error
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new UserManagerResponse
                 {
                     Message = "Error while authenticating user",
-                    IsSuccess = false
+                    IsSuccess = false,
+                    Exception = ex.Message
                 };
             }
         }
